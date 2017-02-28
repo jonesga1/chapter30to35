@@ -7,18 +7,15 @@ class MilesPerGallon
   {
     Scanner scan = new Scanner(System.in);
 
-    double startMiles, endMiles, gallons;
+    double startMiles;
 
     System.out.print("Enter first reading: " ); 
     startMiles = scan.nextDouble();
 
-    System.out.print("Enter second reading: " ); 
-    endMiles = scan.nextDouble();
 
-    System.out.print("Enter gallons: " ); 
-    gallons  = scan.nextDouble();
-
-    Car car  = new Car( startMiles, endMiles, gallons );
+    Car car  = new Car( startMiles);
+    
+    car.fillUp(350, 10);
 
     System.out.println( "Miles per gallon is "  + car.calculateMPG() );
     
@@ -42,11 +39,11 @@ class Car
   boolean economyCar;
 
   // constructor
-  Car(  double first, double last, double gals  )
+  Car(  double first  )
   {
     startMiles = first ;
-    endMiles   = last ;
-    gallons    = gals ;
+    endMiles   = startMiles ;
+    gallons    = 0 ;
     gasHog = false; 
     economyCar = false;
     if (this.calculateMPG() > 30.0) {
@@ -62,4 +59,9 @@ class Car
     return  (endMiles - startMiles)/gallons;   
   }
 
+  void fillUp(int miles, double gallon) {
+	  gallons = gallon;
+	  startMiles = endMiles;
+	  endMiles = miles;
+  }
 }
