@@ -103,6 +103,15 @@ class Pantry
 		  jar3 = j;
 	  }
   }
+  
+  public void mixedFruit() {
+	  if (jar1.capacity < 3 && jar2.capacity < 3 && jar3.capacity < 3) {
+		  jar1.contents = "Mixed Fruit";
+		  jar1.capacity = jar1.capacity + jar2.capacity + jar3.capacity;
+		  jar2 = null;
+		  jar3 = null;
+	  }
+  }
 }
 
 class PantryTester
