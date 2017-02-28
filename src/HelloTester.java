@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 class HelloObject
 {
+	
+	private String HelloObject;
   // method definition
   void speak()
   {
@@ -9,9 +11,9 @@ class HelloObject
 	System.out.println("What is your greeting?");
 	String greeting = sc.nextLine();
 	for (int i = 0; i < greeting.length(); i++) {
-    	System.out.println(greeting + ", good morning!");
-    	System.out.println(greeting + ", good evening!");
+    	System.out.println(greeting + ", good morning!" + greeting + ", good evening!");
 	}
+	HelloObject = greeting + ", good morning!" + greeting + ", good evening!";
   }
 }
 
