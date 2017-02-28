@@ -118,9 +118,13 @@ class PantryTester
 	  System.out.println("Which jam would you like to spread? (1, 2, 3)");
 	  Scanner sc = new Scanner(System.in);
 	  int input = sc.nextInt();
-	  pantry.select(input);
-	  System.out.println("How much would you like to spread?");
-	  int input2 = sc.nextInt();
-	  pantry.spread(input2);
+	  if (input > 3) {
+		  System.out.println("Selection not available.");
+	  } else {
+		  pantry.select(input);
+		  System.out.println("How much would you like to spread?");
+		  int input2 = sc.nextInt();
+		  pantry.spread(input2);
+	  }
   }
 }
