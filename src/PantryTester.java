@@ -93,6 +93,16 @@ class Pantry
   {
     selected . spread( oz ) ;
   }
+  
+  public void replace(Jam j, int place) {
+	  if (place == 1) {
+		  jar1 = j;
+	  } else if (place == 2) {
+		  jar2 = j;
+	  } else if (place == 3) {
+		  jar3 = j;
+	  }
+  }
 }
 
 class PantryTester
