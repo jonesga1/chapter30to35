@@ -8,13 +8,24 @@ class Box {
 		width = w;
 		height = h;
 	}
+	private double faceArea() {
+		return width * height;
+	}
+	
+	private double topArea() {
+		return width * length;
+	}
+	
+	private double sideArea() {
+		return height * length;
+	}
 	
 	public double volume() {
 		return (length * width * height);
 	}
 	
 	public double area() {
-		return (length * width * 2) + (width * height * 2) + (height * length * 2);
+		return (faceArea() * 2) + (topArea() * 2) + (sideArea() * 2);
 	}
 }
 
@@ -29,6 +40,7 @@ class BoxTester
 
      System.out.println( "length: " + box.length + " height: " + box. height +
                          "width:  " + box.width )  ;
+  
 
   }
 }
