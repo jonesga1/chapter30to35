@@ -52,6 +52,13 @@ class Box {
 
 	  return new Box( 0.75*oldBox.width(), 0.75*oldBox.length(), 0.75*oldBox.height());
 	}
+	
+	public boolean nests( Box outsideBox ) {
+		if (this.height() < outsideBox.height() && this.width() < outsideBox.width() && this.length() < outsideBox.length()) {
+			return true;
+		}
+		return false;
+	}
 }
 
 class BoxTester
